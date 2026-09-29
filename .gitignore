@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# figma
+.figma-token
+/figma-tmp
+
+# claude / agents
+.claude/
+CLAUDE.md
+AGENTS.md

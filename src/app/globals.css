@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
+/*
+  Faro (Luzi Type, commercial) is the heading font in the Figma file.
+  Drop licensed files into /public/fonts (Faro-Regular/SemiBold/Bold .woff2) and they are picked up here.
+  Until then local() / the fallback stack below is used.
+*/
+@font-face {
+  font-family: "Faro";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Faro Regular"), local("Faro"), url("/fonts/Faro-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Faro";
+  font-weight: 600;
+  font-display: swap;
+  src: local("Faro SemiBold"), url("/fonts/Faro-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Faro";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Faro Bold"), url("/fonts/Faro-Bold.woff2") format("woff2");
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --pink: #f497a9;
+  --blush: #fff0f5;
+  --ink: #090103;
+  --plum: #33121d;
+  /* one design px at 1920 (clamped so >1920 screens stay pixel-exact) */
+  --u: calc(min(100vw, 1920px) / 1920);
+  --gutter: clamp(20px, 4vw, 48px);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-pink: var(--pink);
+  --color-blush: var(--blush);
+  --color-ink: var(--ink);
+  --color-plum: var(--plum);
+  --font-sans: var(--font-inter), "Inter", Arial, sans-serif;
+  --font-display: "Faro", "Helvetica Neue", Arial, sans-serif;
+  --font-hand: var(--font-caveat), "Caveat", cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--blush);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1440px content column of the 1920 artboard, centred, with a gutter on small screens */
+.container-x {
+  width: calc(100% - 2 * var(--gutter));
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* logo marquee: begins at -1746px (Figma frame offset) and slides one full set (8 × 274px) per loop */
+@keyframes brands-slide {
+  from {
+    transform: translateX(-1746px);
+  }
+  to {
+    transform: translateX(-3938px);
+  }
+}
+.brands-track {
+  animation: brands-slide 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .brands-track {
+    animation: none;
+    transform: translateX(-1746px);
+  }
 }
