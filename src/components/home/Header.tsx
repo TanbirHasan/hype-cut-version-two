@@ -46,7 +46,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button href="#waitlist" className="hidden sm:inline-flex md:h-[60px]">
+          <Button href="#waitlist" className="max-[439px]:hidden md:h-[60px]">
             Join the Waitlist
           </Button>
           <button
@@ -78,7 +78,7 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
-          <Button href="#waitlist" className="mt-2 sm:hidden">
+          <Button href="#waitlist" className="mt-2 min-[440px]:hidden">
             Join the Waitlist
           </Button>
         </nav>
