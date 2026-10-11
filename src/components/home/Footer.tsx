@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BOOK_HREF } from "@/lib/links";
 
 const columns = [
   {
@@ -7,7 +8,7 @@ const columns = [
     links: [
       ["About Us", "/about"],
       ["Projects", "/portfolio"],
-      ["Services", "#how-it-works"],
+      ["Services", "/#how-it-works"],
       ["Blogs", "#"],
       ["Contact", "#"],
       ["Careers", "#"],
@@ -74,7 +75,7 @@ export default function Footer() {
                 high-performing YouTube content.
               </p>
               <Link
-                href="#book"
+                href={BOOK_HREF}
                 className="inline-flex h-[70px] w-fit items-center justify-center rounded-full bg-[#ffd3e4] px-8 text-[clamp(16px,1.39vw,20px)] font-medium leading-[1.21] tracking-[-0.015em] text-black transition-transform hover:-translate-y-0.5"
               >
                 Book an Intro Call

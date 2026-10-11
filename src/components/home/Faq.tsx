@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { BOOK_HREF } from "@/lib/links";
 
 /** Only the first answer exists in the Figma file; the rest render as non-expanding rows until copy is supplied. */
 const items: { q: string; a?: string }[] = [
@@ -41,7 +42,7 @@ export default function Faq() {
                 Get started with a<br /> free strategy call!
               </p>
               <Link
-                href="#book"
+                href={BOOK_HREF}
                 className="inline-flex h-[70px] items-center justify-center rounded-full bg-[#003e25] px-8 text-[20px] font-medium leading-[1.21] tracking-[-0.015em] text-white transition-transform hover:-translate-y-0.5"
               >
                 Book an Intro Call

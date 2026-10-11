@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../Button";
+import { BOOK_HREF } from "@/lib/links";
 
 /** Faro 700, 100px / 100px, -4% tracking (fluid: hits 100px at a 1440px viewport). */
 const h1 =
@@ -31,7 +32,7 @@ export default function Hero() {
         </p>
       </div>
       <div className="flex flex-wrap justify-center gap-4">
-        <Button href="#book" className="min-w-[252px] md:h-[70px]">
+        <Button href={BOOK_HREF} className="min-w-[252px] md:h-[70px]">
           Book a Strategy Call
         </Button>
         <Button href="/portfolio" variant="outline" className="min-w-[252px] md:h-[70px]">

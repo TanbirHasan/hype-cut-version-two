@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { BOOK_HREF, WAITLIST_HREF } from "@/lib/links";
 
 type Item = { t: string; icon: "check" | "plus" };
 
@@ -167,7 +168,7 @@ export default function Pricing() {
                 <p className={desc}>
                   Additional services available à la carte.
                 </p>
-                <PlanCta href="#waitlist">Join the Waitlist</PlanCta>
+                <PlanCta href={WAITLIST_HREF}>Join the Waitlist</PlanCta>
               </div>
             </article>
 
@@ -197,7 +198,7 @@ export default function Pricing() {
                   ]}
                 />
               </div>
-              <PlanCta href="#waitlist">Join the Waitlist</PlanCta>
+              <PlanCta href={WAITLIST_HREF}>Join the Waitlist</PlanCta>
             </article>
           </div>
 
@@ -226,7 +227,7 @@ export default function Pricing() {
               />
             </div>
             <Link
-              href="#book"
+              href={BOOK_HREF}
               className="inline-flex h-[70px] w-fit items-center justify-center rounded-full bg-pink px-8 text-[clamp(16px,1.39vw,20px)] font-medium leading-[1.21] tracking-[-0.015em] text-ink transition-transform hover:-translate-y-0.5"
             >
               Book a call

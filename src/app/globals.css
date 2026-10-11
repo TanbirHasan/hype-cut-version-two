@@ -1,27 +1,30 @@
 @import "tailwindcss";
 
 /*
-  Faro (Luzi Type, commercial) is the heading font in the Figma file.
-  Drop licensed files into /public/fonts (Faro-Regular/SemiBold/Bold .woff2) and they are picked up here.
-  Until then local() / the fallback stack below is used.
+  Faro (Luzi Type, commercial) is the heading font in the Figma file, but the licensed files are not in the repo yet,
+  so the site currently falls back to Helvetica Neue / Arial for headings.
+
+  To switch Faro on: put Faro-Regular.woff2, Faro-SemiBold.woff2 and Faro-Bold.woff2 in /public/fonts and append
+      , url("/fonts/Faro-<Weight>.woff2") format("woff2")
+  to each `src:` below. (The url() entries are left out on purpose: a missing file is a 404 on every page load.)
 */
 @font-face {
   font-family: "Faro";
   font-weight: 400;
   font-display: swap;
-  src: local("Faro Regular"), local("Faro"), url("/fonts/Faro-Regular.woff2") format("woff2");
+  src: local("Faro Regular"), local("Faro");
 }
 @font-face {
   font-family: "Faro";
   font-weight: 600;
   font-display: swap;
-  src: local("Faro SemiBold"), url("/fonts/Faro-SemiBold.woff2") format("woff2");
+  src: local("Faro SemiBold");
 }
 @font-face {
   font-family: "Faro";
   font-weight: 700;
   font-display: swap;
-  src: local("Faro Bold"), url("/fonts/Faro-Bold.woff2") format("woff2");
+  src: local("Faro Bold");
 }
 
 :root {

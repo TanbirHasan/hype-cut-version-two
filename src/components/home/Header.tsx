@@ -4,13 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Button from "../Button";
+import { WAITLIST_HREF } from "@/lib/links";
 
 const links = [
   { label: "About us", href: "/about" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: " Pricing", href: "/pricing" },
-  { label: "How it Works", href: "#how-it-works" },
-  { label: "FAQ", href: "#faq" },
+  { label: " Pricing", href: "/#pricing" },
+  { label: "How it Works", href: "/#how-it-works" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Header() {
@@ -46,7 +47,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button href="#waitlist" className="max-[439px]:hidden md:h-[60px]">
+          <Button href={WAITLIST_HREF} className="max-[439px]:hidden md:h-[60px]">
             Join the Waitlist
           </Button>
           <button
@@ -78,7 +79,7 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
-          <Button href="#waitlist" className="mt-2 min-[440px]:hidden">
+          <Button href={WAITLIST_HREF} className="mt-2 min-[440px]:hidden">
             Join the Waitlist
           </Button>
         </nav>

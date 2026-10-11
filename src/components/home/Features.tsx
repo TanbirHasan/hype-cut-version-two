@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BOOK_HREF } from "@/lib/links";
 
 const rows = [
   {
@@ -51,7 +52,7 @@ export default function Features() {
             </p>
           </div>
           <Link
-            href="#book"
+            href={BOOK_HREF}
             className="inline-flex h-[70px] items-center justify-center rounded-full bg-[#003e25] px-8 text-[clamp(16px,1.39vw,20px)] font-medium leading-[1.21] tracking-[-0.015em] text-white transition-transform hover:-translate-y-0.5"
           >
             Book a Call

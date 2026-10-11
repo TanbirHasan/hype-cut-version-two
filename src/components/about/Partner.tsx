@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BOOK_HREF } from "@/lib/links";
 
 /** The mint "Strategy & Growth" card, composed from the Figma vectors (352×496 box). */
 function StrategyCard() {
@@ -40,7 +41,7 @@ export default function Partner() {
             </p>
           </div>
           <Link
-            href="#book"
+            href={BOOK_HREF}
             className="inline-flex h-[70px] w-fit items-center justify-center rounded-full bg-[#003e25] px-8 text-[clamp(16px,1.39vw,20px)] font-medium leading-[1.21] tracking-[-0.015em] text-white transition-transform hover:-translate-y-0.5"
           >
             Start a Project ↗
